@@ -1,0 +1,9 @@
+.zoom-img {
+    transition: transform .5s;
+  }
+.zoom-img:hover {
+    transform: scale(1.2);
+  }
+.border-xem-nhieu{
+  border-bottom: 2px dotted rgb(126, 17, 128);
+}
