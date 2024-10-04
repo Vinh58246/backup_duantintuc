@@ -1,7 +1,6 @@
 <?php
 
-use App\Http\Controllers\c_admin;
-use App\Http\Controllers\c_page;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,11 +18,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/home', [c_page::class, 'home_client'])->name('home_client');
-Route::get('/e', [c_page::class, 'test']);
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/detail/{slug}', [c_page::class, 'detail_client'])->name('detail');
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
 
-Route::get('/admin', [c_admin::class, 'tintuc_admin']);
-
-Route::get('/filter', [c_page::class, 'filter_news'])->name('filter');
+require __DIR__.'/auth.php';
