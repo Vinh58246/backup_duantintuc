@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use App\Models\news;
 use App\Models\category;
 
+
 class c_page extends Controller
 {
     function home_client(){
@@ -64,11 +65,11 @@ class c_page extends Controller
 
         $hots = news::where('hots', 1)->limit(3)->get();
 
-        $ctrgsl = category::all();
+        $ctrgsl = category::where('trang_thai', 1)->get();
         return view('client.fc_filter', compact('ctrgsl', 'news', 'hots'));
     }
     function test(){
-        // echo 'ch';
+        echo 'ch';
         $kq = news::where('idcategory', 1)->get();
         foreach($kq as $tintuc){
             echo $tintuc->title."<br>";

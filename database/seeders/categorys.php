@@ -15,11 +15,11 @@ class categorys extends Seeder
     {
         DB::table('categories')->insert(
             [
-                ['ten' => 'lmht', 'trang_thai' => 1],
-                ['ten' => 'liên quân mobile', 'trang_thai' => 1],
-                ['ten' => 'lmht tốc chiến', 'trang_thai' => 1],
-                ['ten' => 'game online', 'trang_thai' => 1],
-                ['ten' => 'manga/film', 'trang_thai' => 1],
+                ['ten' => 'lmht', 'trang_thai' => 1, 'slug' => 'lmht'],
+                ['ten' => 'liên quân mobile', 'trang_thai' => 1, 'slug' => 'lien-quan-mobile'],
+                ['ten' => 'lmht tốc chiến', 'trang_thai' => 1, 'slug' => 'lmht-toc-chien'],
+                ['ten' => 'game online', 'trang_thai' => 1, 'slug' => 'game-online'],
+                ['ten' => 'manga/film', 'trang_thai' => 1, 'slug' => 'manga-film'],
             ]
         );
     }

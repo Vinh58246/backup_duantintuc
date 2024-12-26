@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\Linkfile;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
@@ -15,12 +16,20 @@ use Illuminate\View\View;
 
 class RegisteredUserController extends Controller
 {
+    // private $model = null;
+    // function __construct()
+    // {
+    //     $this->model = new user();
+
+    // }
     /**
      * Display the registration view.
      */
     public function create(): View
     {
-        return view('auth.register');
+        $view_content = "register";
+        return view('auth.layout', compact('view_content'));
+        // return view('auth.register');
     }
 
     /**

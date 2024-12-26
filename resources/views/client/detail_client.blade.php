@@ -9,8 +9,8 @@
         </div>
         <div class="row mb-5">
             <div class="col-8">
-                <div class=" pb-4 mb-5"  style="border-bottom: 4px solid rgb(126, 17, 128);">
-                    {{ $detail->content }}
+                <div class=" pb-4 mb-5 d-flex flex-column"  style="border-bottom: 4px solid rgb(126, 17, 128);">
+                    @php echo $detail->content @endphp
                 </div>
                 <div>
                     <h3>Bình luận</h3>

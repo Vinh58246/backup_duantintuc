@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Api\admin;
+use App\Http\Controllers\Api\apinews;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -18,4 +18,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/test_api',[admin::class, 'getAllProduct']);
+Route::resource('news', apinews::class);
+
+Route::get('news_in_category/{idct}', [apinews::class, 'news_in_category']);

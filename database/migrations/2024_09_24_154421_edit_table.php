@@ -11,9 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        // Schema::table('news', function (Blueprint $table){
-        //     $table->foreignId('idcategor')->constrained('categories')->onDelete('cascade');
-        // });
+        Schema::table('users', function (Blueprint $table){
+            // $table->foreignId('idcategor')->constrained('categories')->onDelete('cascade');
+            $table->string('role')->default('user');
+        });
     }
 
     /**
@@ -21,7 +22,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('news', function (Blueprint $table) {
+        Schema::table('users', function (Blueprint $table) {
             //
         });
     }
